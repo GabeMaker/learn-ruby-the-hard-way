@@ -23,12 +23,11 @@ line3 = $stdin.gets.chomp
 
 puts "I'm going to write these to the file"
 
-target.write(line1)
-target.write("\n")
-target.write(line2)
-target.write("\n")
-target.write(line3)
-target.write("\n")
+formatter = "%{one} %{two} %{three}"
+target.write formatter % {one: line1 + "\n", two: line2 + "\n", three: line3 + "\n"}
 
 puts "and finally we close it"
 target.close
+
+
+# drill 6: if file already exists, 'w' means content will be erased - so truncate is not necessary
