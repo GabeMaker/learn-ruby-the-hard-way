@@ -24,10 +24,16 @@ puts "Michigan's abbreviation is #{states['Michigan']}"
 puts "Florida's abbreviation is #{states['Florida']}"
 
 puts '-' * 10
-# Want this to say Florida has Miami
 puts "Florida has: #{cities[states['Florida']]}"
 puts "Michigan has: #{cities[states['Michigan']]}"
 
+
+
+
+
+
+
+# puts every state abbreviation
 puts '-' * 10
 states.each do |state, abbrev|
   puts "#{state} is abbreviated #{abbrev}"
