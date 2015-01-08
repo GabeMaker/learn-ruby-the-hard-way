@@ -1,0 +1,7 @@
+This is just a test file.
+
+Enter its name as the first argument when running ex17.rb from command line.
+The second argument should be the name of the copy:
+
+e.g.
+ruby ex17.rb ex17_test.txt ex17_copy
