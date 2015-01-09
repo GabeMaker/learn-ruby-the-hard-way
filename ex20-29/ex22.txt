@@ -1,0 +1,55 @@
+What Do You Know So Far?
+
+A quick survey of words and symbols used so far in LRtHW
+(using as rough notes for study)
+
+puts
+""
+#
++ - / * %
+< > <= >=
+#{}
+true false
+=
+_
+''
+print 		(ex7)
+
+formatter = "%{first} %{second} %{third} %{fourth}" 			(ex8 "apply the same format to multiple values")
+puts formatter % {first: 1, second: 2, third: 3, fourth: 4} 
+
+\n (backslash n)
+"""
+12 other escape sequences: \\, \', \", \a, etc. 		(ex10)
+
+gets
+chomp
+to_i to_f
+
+ARGV (argument variable)
+first 		(ex14)
+$stdin
+
+open() 		(ex15)
+read
+ri
+close()
+
+readline 	(ex16)
+truncate
+write
+open(filename, 'w')
+'w' (write mode), 'r' (read), 'a' (append)
+'w+', 'r+', 'a+'
+
+length (?bytes ?for a string ?for a file) 		(ex17)
+File.exist?()
+
+def print_two(*args) 	(asterisk args)  		(ex18)
+  arg1, arg2 = args		(multiple assignment)
+end
+
+seek()		(ex20)
++= (contraction of = and +)
+
+return		(ex21)
