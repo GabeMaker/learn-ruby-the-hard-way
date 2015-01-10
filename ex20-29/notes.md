@@ -1,13 +1,13 @@
-### Notes on Exercises
+# Notes on Exercises
 
 ## Things to remember
 
-# ex24
+### ex24
 * Escapes like **\n** and **\t** don't work as newline and tab in 'single' strings, only "double" strings 
 
 ## New Syntax
 
-# ex24 (from line 5)
+### ex24 (from line 5)
 
 poem = **<<END**
 \tThe lovely world
@@ -22,5 +22,5 @@ A search for "<<END ruby" on [SymbolHound](http://symbolhound.com/?q=%3C%3CEND+r
 
 ## Misc
 
-# ex24 (line 5)
+### ex24 (line 5)
 Output to my termial differed from the What You Should See section. LRtHW showed a small indent of maybe 2 spaces. I had a large tab intent
