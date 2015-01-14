@@ -17,7 +17,7 @@ end
 
 
 puts """
-Study drills 1-3
+Study drills 1-4
 ****
 """
 
@@ -31,5 +31,25 @@ def numbers_before(number, increment=1)
   numbers
 end
 
-p numbers_before(10)
+puts numbers_before(6)
 
+
+puts "Study drill 5", "****"
+
+def for_loop(number, increment=1)
+  numbers = []
+  (0...number).each do |x|
+    numbers << x
+    puts "Numbers now:"
+    puts numbers
+  end
+  puts "The numbers: ", numbers
+end
+
+for_loop(6)
+
+puts """
+
+There is no need to print the value of i at top and bottom because i is not used here
+
+"""

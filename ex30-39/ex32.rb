@@ -2,11 +2,11 @@ the_count = [1,2,3,4,5]
 fruits = ['apples', 'oranges', 'pears', 'apricots']
 change = [1, 'pennies', 2, 'dimes', 3, 'quarters']
 
-for foo in the_count
-  puts "this is count #{foo}"
+for n in the_count
+  puts "this is count #{n}"
 end
 
-# Study drill 2 re-write
+Study drill 2 re-write
 the_count.each do |element|
   puts "this is count #{element}"
 end
