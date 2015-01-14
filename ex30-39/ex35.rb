@@ -2,12 +2,12 @@ def gold_room
 	puts "This room is full of gold. How much do you take?"
 
   print "> "
-  choice = $stdin.gets.chomp    ### ?need $stdin
+  choice = gets.chomp
 
-  if choice.include?("0") || choice.include?("1")
-    how_much = choice.to_i
-  else
+  if choice =~ /\D/
     dead("Man, learn to type a number.")
+  else
+    how_much = choice.to_i
   end
 
   if how_much < 50
@@ -27,7 +27,7 @@ def bear_room
 
   while true
     print "> "
-    choice = $stdin.gets.chomp
+    choice = gets.chomp
 
     if choice == "take honey"
       dead("The bear looks at you then slaps your face off.")
@@ -50,7 +50,7 @@ def cthulu_room
   puts "Do you flee for your life or eat your head?"
 
   print "> "
-  choice = $stdin.gets.chomp
+  choice = gets.chomp
 
   if choice.include? "flee"
     start
@@ -62,7 +62,7 @@ def cthulu_room
 end
 
 def dead(why)
-  puts why, "Good job!"
+  puts why, "You're dead. Good job!"
   exit(0)
 end
 
@@ -72,7 +72,7 @@ def start
   puts "Which one do you take?"
 
   print "> "
-  choice = $stdin.gets.chomp
+  choice = gets.chomp
 
   if choice == "left"
     bear_room
