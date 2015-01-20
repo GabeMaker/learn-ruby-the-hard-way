@@ -15,3 +15,8 @@ fresh_prince = Song.new(["In West Philly", "born and raised", "playground was wh
 
 happy_bday.sing_me_a_song
 fresh_prince.sing_me_a_song
+
+# Study drill 1-2
+lyrics = ["Such a perfect day", "Drink sangria in the park","Then later when it gets dark","We go home"]
+perfect_day = Song.new(lyrics)
+perfect_day.sing_me_a_song
