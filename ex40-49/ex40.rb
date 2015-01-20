@@ -1,12 +1,17 @@
-require "./class"
-require "./module"
-mystuff = {'apples' => "I AM APPLES!"}
+class Song
 
-puts mystuff['apples']
+  def initialize(lyrics)
+    @lyrics = lyrics
+  end
 
-MyMod.apples()
-puts MyMod::TANGERINE
+  def sing_me_a_song()
+    @lyrics.each {|line| puts line }
+  end
+end
 
-thing = MyStuff.new
-thing.apples
-puts thing.tangerine
+happy_bday = Song.new(["Happy birthday to you", "I don't want to get sued", "So I'll stop"])
+
+fresh_prince = Song.new(["In West Philly", "born and raised", "playground was where..."])
+
+happy_bday.sing_me_a_song
+fresh_prince.sing_me_a_song
