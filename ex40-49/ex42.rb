@@ -85,3 +85,18 @@ crouse = Salmon.new()
 
 # harry is-a Halibut (is-a Fish)
 harry = Halibut.new()
+
+
+### Study drills:
+
+# 1. Can't research (no Internet access at the moment)
+
+# 2. Is it possible to use a class like it's an object?
+  # It appears so in this example. irb work:
+  rover = Dog.new("Rover")
+  frank = Employee.new("Frank", 1000000)
+  frank.pet = Dog
+  # examining frank gives:
+  # => #<Employee:0x007f9461a67398 @name="Frank", @pet=Dog, @salary=1000000>
+
+
