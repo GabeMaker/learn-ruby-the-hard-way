@@ -1,14 +1,35 @@
 # is-a; any created object using Animal.new is an instance of class Animal
 class Animal
+  def initialize
+    @talent = rand(6) + rand(6) + 2
+  end
+
+  def legs(legs=4)
+    @legs = legs
+  end
+
 end
 
 # is-a; Dog is an Animal
 class Dog < Animal
 
   def initialize(name)
+    @talent = rand(6) + rand(6) + 2
     # has-a; Dog has a name
     @name = name
   end
+
+  def talks?
+    if @talent >= 8
+      true
+    elsif @talent >= 6
+      puts "#{@name} is almost talented enough to talk"
+      false
+    else
+      false
+    end
+  end
+
 end
 
 # is a; Cat is a class of the class Cat
@@ -59,6 +80,7 @@ class Halibut < Fish
 end
 
 
+
 # rover is-a Dog
 rover = Dog.new("Rover")
 
@@ -100,3 +122,8 @@ harry = Halibut.new()
   # => #<Employee:0x007f9461a67398 @name="Frank", @pet=Dog, @salary=1000000>
 
 
+# 3. added:
+  # talent to Animal on creation
+  # legs method for Animals
+  # talent to Dog on creation (need to know how to duplicate this line of code from Animal)
+  # talks? method for Dog
