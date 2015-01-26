@@ -5,11 +5,17 @@ WORDS = []
 
 PHRASES = {
   "class ### < ###\nend" =>
-    "Make a class named ### that is-a ###.",
-  # "class ###\n\tdef initialize(@@@)\n\tend\nend" =>
-  #   "class ### has-a initialize that takes @@@ parameters."
-  # "class ###\n\tdef ***(@@@)\n\tend\nend" =>
-  #   "class ### has-a function named *** that takes @@@ parameters.",
+       "Make a class named ### that is-a ###.",
+  "class ###\n\tdef initialize(@@@)\n\tend\nend" =>
+       "class ### has-a initialize that takes @@@ parameters.",
+  "class ###\n\tdef ***(@@@)\n\tend\nend" =>
+       "class ### has-a function named *** that takes @@@ parameters.",
+  "*** = ###.new()" =>
+       "Set *** to an instance of class ###.",
+  "***.***(@@@)" =>
+       "From *** get the *** function, and call it with parameters @@@.",
+  "***.*** = '***'" =>
+       "From *** get the *** attribute and set it to '***'."
 }
 
 PHRASE_FIRST = ARGV[0] == "english"
@@ -34,7 +40,7 @@ def craft_params(rand_words, snippet, pattern)
     params.join(', ')
   end
 
-  return  names * 2
+  return names * 2
 end
 
 def convert(snippet, phrase)
@@ -46,13 +52,13 @@ def convert(snippet, phrase)
   results = []
 
   [snippet, phrase].each do |sentence|
-    #
+    # fake class names, also copies sentence
     result = sentence.gsub(/###/) {|x| class_names.pop }
 
-    #
-    result.gsub!(/\*\*\*/) {|x| other_names.pop}
+    # fake other names
+    result.gsub!(/\*\*\*/) {|x| other_names.pop }
 
-    #
+    # fake parameter lists
     result.gsub!(/@@@/) {|x| param_names.pop }
 
     results.push(result)
@@ -61,11 +67,10 @@ def convert(snippet, phrase)
   return results
 end
 
-#
+# keep going until they hit CTRL-D
 loop do
-  # snippets is a randomly sorted array of the keys from the PHRASES hash
   snippets = PHRASES.keys().sort_by {rand}
-  # snippets.each do |snippet|
+
   for snippet in snippets
     phrase = PHRASES[snippet]
     question, answer = convert(snippet, phrase)
@@ -78,6 +83,6 @@ loop do
 
     exit(0) unless $stdin.gets
 
-    puts "\nANSWER: %s\n\n" % answer
+    puts "\nANSWER:  %s\n\n" % answer
   end
 end
